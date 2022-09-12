@@ -2,8 +2,16 @@
 <resources>
     <dimen name="dp_0">0dp</dimen>
     <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_6">6dp</dimen>
     <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_16">6dp</dimen>
     <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_36">36dp</dimen>
 
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
     <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_20">20sp</dimen>
 </resources>
