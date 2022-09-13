@@ -2,6 +2,7 @@
 <resources>
     <!-- recipes -->
     <string name="recipes.recipes_title">Recipes</string>
+    <string name="recipes.vegan_title">Vegan</string>
 
     <!-- favorites -->
     <string name="favorite.favorite_title">Favorites</string>
