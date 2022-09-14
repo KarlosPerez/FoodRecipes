@@ -2,6 +2,7 @@ package com.karlosprojects.foodrecipes.data.mappers
 
 import com.karlosprojects.foodrecipes.data.dto.ExtendedIngredient
 import com.karlosprojects.foodrecipes.data.dto.RecipeDto
+import com.karlosprojects.foodrecipes.data.local.entities.RecipeEntity
 import com.karlosprojects.foodrecipes.domain.model.Recipes
 
 fun RecipeDto.toDomainRecipe(): Recipes {
@@ -23,6 +24,32 @@ fun RecipeDto.toDomainRecipe(): Recipes {
         vegetarian = vegetarian,
         veryHealthy = veryHealthy,
     )
+}
+
+fun RecipeDto.toLocalRecipe(): RecipeEntity {
+    return RecipeEntity(
+        recipe = Recipes(
+            aggregateLikes = aggregateLikes,
+            cheap = cheap,
+            dairyFree = dairyFree,
+            extendedIngredients = extendedIngredients.getIngredients(),
+            glutenFree = glutenFree,
+            id = id,
+            image = image,
+            readyInMinutes = readyInMinutes,
+            sourceName = sourceName,
+            sourceUrl = sourceUrl,
+            summary = summary,
+            title = title,
+            vegan = vegan,
+            vegetarian = vegetarian,
+            veryHealthy = veryHealthy,
+        ),
+    )
+}
+
+fun RecipeEntity.toDomainRecipe(): Recipes {
+    return recipe
 }
 
 private fun List<ExtendedIngredient>.getIngredients(): List<Recipes.Ingredients> {

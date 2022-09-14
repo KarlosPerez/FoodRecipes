@@ -26,6 +26,7 @@ object DatabaseModule {
         DATABASE_NAME
     )
         .addTypeConverter(RecipeTypeConverter())
+        .allowMainThreadQueries()
         .build()
 
     @Provides

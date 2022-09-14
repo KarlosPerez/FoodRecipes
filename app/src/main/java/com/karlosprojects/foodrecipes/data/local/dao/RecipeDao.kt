@@ -14,5 +14,8 @@ interface RecipeDao {
     suspend fun insertRecipe(recipeEntity: RecipeEntity)
 
     @Query("SELECT * FROM recipes ORDER BY id ASC")
-    fun getRecipes(): Flow<List<RecipeEntity>>
+    suspend fun getRecipes(): List<RecipeEntity>
+
+    @Query("SELECT COUNT(*) FROM recipes")
+    fun getRecipesCount(): Int
 }
