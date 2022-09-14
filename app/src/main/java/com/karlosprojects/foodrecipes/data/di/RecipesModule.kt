@@ -1,6 +1,7 @@
 package com.karlosprojects.foodrecipes.data.di
 
 import com.karlosprojects.foodrecipes.data.api.SpoonacularApi
+import com.karlosprojects.foodrecipes.data.local.dao.RecipeDao
 import com.karlosprojects.foodrecipes.data.repository.RecipesRepositoryImpl
 import com.karlosprojects.foodrecipes.domain.repository.RecipesRepository
 import dagger.Module
@@ -16,8 +17,9 @@ object RecipesModule {
     @Provides
     @Singleton
     fun providesRecipesRepository(
-        dataSource: SpoonacularApi
+        remoteDataSource: SpoonacularApi,
+        localDataSource: RecipeDao
     ): RecipesRepository {
-        return RecipesRepositoryImpl(dataSource)
+        return RecipesRepositoryImpl(remoteDataSource, localDataSource)
     }
 }
