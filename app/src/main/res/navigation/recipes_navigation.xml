@@ -14,10 +14,23 @@
         android:id="@+id/recipesFragment"
         android:name="com.karlosprojects.foodrecipes.presentation.recipes.RecipesFragment"
         android:label="@string/favorite.favorite_title"
-        tools:layout="@layout/fragment_recipes" />
+        tools:layout="@layout/fragment_recipes" >
+        <action
+            android:id="@+id/action_recipesFragment_to_recipesBottomSheet"
+            app:destination="@id/recipesBottomSheet" />
+    </fragment>
     <fragment
         android:id="@+id/foodJokeFragment"
         android:name="com.karlosprojects.foodrecipes.presentation.jokes.FoodJokeFragment"
         android:label="@string/jokes.joke_title"
         tools:layout="@layout/fragment_food_joke" />
+    <dialog
+        android:id="@+id/recipesBottomSheet"
+        android:name="com.karlosprojects.foodrecipes.presentation.recipes.bottomsheet.RecipesBottomSheet"
+        android:label="recipes_bottom_sheet"
+        tools:layout="@layout/recipes_bottom_sheet" >
+        <action
+            android:id="@+id/action_recipesBottomSheet_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+    </dialog>
 </navigation>
