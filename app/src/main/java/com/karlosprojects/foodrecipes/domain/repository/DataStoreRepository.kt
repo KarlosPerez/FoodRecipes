@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface DataStoreRepository {
 
-    suspend fun saveMealAndTypePreferences()
+    suspend fun saveMealAndTypePreferences(parameters: DataStoreParameters)
 
     suspend fun getMealAndTypePreferences(): Flow<DataStoreParameters>
 }

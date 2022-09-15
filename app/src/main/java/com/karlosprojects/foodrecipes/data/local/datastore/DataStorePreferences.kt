@@ -7,13 +7,13 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.karlosprojects.foodrecipes.core.utils.Constants.DEFAULT_DIET_TYPE
 import com.karlosprojects.foodrecipes.core.utils.Constants.DEFAULT_MEAL_TYPE
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.android.scopes.ActivityRetainedScoped
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import java.io.IOException
 import javax.inject.Inject
+import javax.inject.Singleton
 
-@ActivityRetainedScoped
+@Singleton
 class DataStorePreferences @Inject constructor(@ApplicationContext val context: Context) {
 
     private object MealAndTypeKeys {

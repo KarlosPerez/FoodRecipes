@@ -7,15 +7,15 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class DataStoreRepositoryImpl @Inject constructor(
-    val preferences: DataStorePreferences
+    private val preferences: DataStorePreferences
 ): DataStoreRepository {
 
-    override suspend fun saveMealAndTypePreferences() {
-        TODO("Not yet implemented")
+    override suspend fun saveMealAndTypePreferences(parameters: DataStoreParameters) {
+        preferences.saveMealAndDietType(parameters)
     }
 
     override suspend fun getMealAndTypePreferences(): Flow<DataStoreParameters> {
-        TODO("Not yet implemented")
+        return preferences.getMealAndTypePreferences
     }
 
 
