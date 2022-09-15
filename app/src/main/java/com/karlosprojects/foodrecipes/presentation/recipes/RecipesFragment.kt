@@ -21,7 +21,9 @@ import kotlinx.coroutines.flow.onEach
 class RecipesFragment : Fragment() {
 
     private val recipesViewModel: RecipesViewModel by viewModels()
-    private lateinit var binding: FragmentRecipesBinding
+
+    private var _binding: FragmentRecipesBinding? = null
+    private val binding get() = _binding!!
 
     private val recipesAdapter by lazy { RecipesAdapter() }
 
@@ -29,9 +31,8 @@ class RecipesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(
+        _binding = FragmentRecipesBinding.inflate(
             inflater,
-            R.layout.fragment_recipes,
             container,
             false
         )
@@ -78,6 +79,11 @@ class RecipesFragment : Fragment() {
     private fun initRecyclerView() {
         binding.recipesRecycler.adapter = recipesAdapter
         binding.recipesRecycler.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

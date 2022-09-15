@@ -17,7 +17,7 @@ class ItemRecipeBinding {
         fun loadImageFromUrl(imageView: AppCompatImageView, imageUrl: String) {
             imageView.load(imageUrl) {
                 crossfade(600)
-
+                error(R.drawable.error_img_placeholder)
             }
         }
 

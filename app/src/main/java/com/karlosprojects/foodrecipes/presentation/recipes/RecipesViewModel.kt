@@ -2,8 +2,8 @@ package com.karlosprojects.foodrecipes.presentation.recipes
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.karlosprojects.foodrecipes.domain.usecases.GetRecipes
 import com.karlosprojects.foodrecipes.core.utils.UiEvent
+import com.karlosprojects.foodrecipes.domain.usecases.GetRecipes
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -34,6 +34,7 @@ class RecipesViewModel @Inject constructor(
             }
             .onFailure {
                 _recipesState.value = _recipesState.value.copy(isLoading = false)
+                _uiEvent.send(UiEvent.ShowEmptyState)
             }
     }
 
