@@ -26,6 +26,7 @@ ext.versions = [
 
         //room
         roomVersion         : '2.4.3',
+        dataStoreVersion    : '1.0.0',
 
         // network
         retrofitVersion      : '2.9.0',

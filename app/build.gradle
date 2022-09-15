@@ -74,6 +74,12 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$versions.okhttpVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttpVersion"
 
+    //DataStore
+    implementation("androidx.datastore:datastore:$versions.dataStoreVersion")
+    implementation("androidx.datastore:datastore-preferences:$versions.dataStoreVersion")
+    implementation("androidx.datastore:datastore-preferences-core:$versions.dataStoreVersion")
+    implementation("androidx.datastore:datastore-core:$versions.dataStoreVersion")
+
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycleVersion"
 
