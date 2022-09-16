@@ -2,15 +2,29 @@ package com.karlosprojects.foodrecipes.presentation.bindingadapters
 
 import android.view.View
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import androidx.navigation.findNavController
 import coil.load
 import com.google.android.material.textview.MaterialTextView
 import com.karlosprojects.foodrecipes.R
+import com.karlosprojects.foodrecipes.data.dto.RecipeDto
+import com.karlosprojects.foodrecipes.domain.model.Recipes
+import com.karlosprojects.foodrecipes.presentation.recipes.recipelist.RecipesFragmentDirections
 
 class ItemRecipeBinding {
 
     companion object {
+
+        @BindingAdapter("onRecipeClickListener")
+        @JvmStatic
+        fun onRecipeClickListener(recipeLayout: ConstraintLayout, recipe: Recipes) {
+            recipeLayout.setOnClickListener {
+                val action = RecipesFragmentDirections.actionRecipesFragmentToRecipeDetail(recipe)
+                recipeLayout.findNavController().navigate(action)
+            }
+        }
 
         @BindingAdapter("loadImageFromUrl")
         @JvmStatic

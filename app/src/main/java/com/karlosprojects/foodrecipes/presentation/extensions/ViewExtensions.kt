@@ -1,6 +1,8 @@
 package com.karlosprojects.foodrecipes.presentation.extensions
 
+import android.content.Context
 import android.view.View
+import androidx.core.text.HtmlCompat
 import com.google.android.material.snackbar.Snackbar
 
 fun View.showStringSnackBar(
@@ -10,3 +12,9 @@ fun View.showStringSnackBar(
     val snackBar = Snackbar.make(this, messageRes, length)
     snackBar.show()
 }
+
+fun Context.getHtmlString(string: String) =
+    HtmlCompat.fromHtml(
+        string,
+        HtmlCompat.FROM_HTML_MODE_LEGACY
+    )

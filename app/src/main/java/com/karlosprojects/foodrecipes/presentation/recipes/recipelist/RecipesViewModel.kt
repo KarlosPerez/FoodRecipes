@@ -1,4 +1,4 @@
-package com.karlosprojects.foodrecipes.presentation.recipes
+package com.karlosprojects.foodrecipes.presentation.recipes.recipelist
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
