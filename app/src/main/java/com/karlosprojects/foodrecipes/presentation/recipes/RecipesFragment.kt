@@ -31,6 +31,7 @@ class RecipesFragment : Fragment() {
 
     private val listener = object : SearchView.OnQueryTextListener {
         override fun onQueryTextSubmit(query: String?): Boolean {
+            query?.let { recipesViewModel.searchRecipes(query) }
             return true
         }
 

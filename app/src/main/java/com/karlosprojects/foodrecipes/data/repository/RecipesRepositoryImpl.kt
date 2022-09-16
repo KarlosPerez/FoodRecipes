@@ -17,7 +17,6 @@ class RecipesRepositoryImpl @Inject constructor(
 ) : RecipesRepository {
 
     override suspend fun getRecipes(queries: Map<String, String>): Result<List<Recipes>> {
-
         return try {
             val result = api.getRecipes(queries)
             insertRecipesToDatabase(result.results)
@@ -32,6 +31,17 @@ class RecipesRepositoryImpl @Inject constructor(
                     .map { it.recipe }
                 Result.success(result)
             }
+        }
+    }
+
+    override suspend fun searchRecipes(searchQuery: Map<String, String>): Result<List<Recipes>> {
+        return try {
+            val result = api.getRecipes(searchQuery)
+            Result.success(result.results.map {
+                it.toDomainRecipe()
+            })
+        } catch (e: Exception) {
+            Result.failure(e)
         }
     }
 

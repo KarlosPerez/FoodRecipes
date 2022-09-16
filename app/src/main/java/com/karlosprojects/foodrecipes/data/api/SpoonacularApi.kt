@@ -10,4 +10,9 @@ interface SpoonacularApi {
     suspend fun getRecipes(
         @QueryMap queries: Map<String, String>
     ): RecipeResponse
+
+    @GET("/recipes/complexSearch")
+    suspend fun searchRecipes(
+        @QueryMap searchQuery: Map<String, String>
+    ): RecipeResponse
 }

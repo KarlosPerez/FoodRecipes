@@ -6,6 +6,7 @@ import com.karlosprojects.foodrecipes.core.utils.UiEvent
 import com.karlosprojects.foodrecipes.data.local.datastore.DataStoreParameters
 import com.karlosprojects.foodrecipes.domain.repository.DataStoreRepository
 import com.karlosprojects.foodrecipes.domain.usecases.GetRecipes
+import com.karlosprojects.foodrecipes.domain.usecases.SearchRecipes
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
@@ -16,6 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class RecipesViewModel @Inject constructor(
     private val getRecipesUC: GetRecipes,
+    private val searchRecipesUC: SearchRecipes,
     private val dataStoreRepository: DataStoreRepository
 ) : ViewModel() {
 
@@ -69,6 +71,21 @@ class RecipesViewModel @Inject constructor(
                     _uiEvent.send(UiEvent.ShowEmptyState)
                 }
         }
+    }
+
+    fun searchRecipes(query: String) = viewModelScope.launch {
+        _recipesState.value = _recipesState.value.copy(isLoading = true)
+            searchRecipesUC(query)
+                .onSuccess { recipes ->
+                    _recipesState.value = _recipesState.value.copy(
+                        isLoading = false,
+                        recipes = recipes
+                    )
+                }
+                .onFailure {
+                    _recipesState.value = _recipesState.value.copy(isLoading = false)
+                    _uiEvent.send(UiEvent.ShowEmptyState)
+                }
     }
 
 }
