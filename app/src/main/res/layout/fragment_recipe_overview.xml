@@ -60,7 +60,7 @@
             android:id="@+id/likes_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_24"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_16"
             android:textStyle="bold"
