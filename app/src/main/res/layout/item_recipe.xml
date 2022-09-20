@@ -89,7 +89,6 @@
                     android:src="@drawable/ic_likes"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/itemRecipeLikesTitle"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/itemRecipeLikesTitle"
                     app:layout_constraintTop_toBottomOf="@+id/itemRecipeDescription"
                     app:tint="@color/red" />
@@ -128,7 +127,7 @@
                     android:textSize="@dimen/sp_14"
                     app:layout_constraintStart_toEndOf="@id/itemRecipeLikesTitle"
                     app:layout_constraintTop_toBottomOf="@+id/itemRecipeImgPreparationTime"
-                    tools:text="40" />
+                    tools:text="4" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/itemRecipeImgVegan"
