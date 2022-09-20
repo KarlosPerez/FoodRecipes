@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recipes_navigation"
+    app:startDestination="@id/recipesFragment">
+
+    <fragment
+        android:id="@+id/favoriteRecipesFragment"
+        android:name="com.karlosprojects.foodrecipes.presentation.favorites.FavoriteRecipesFragment"
+        android:label="@string/favorite.favorite_title"
+        tools:layout="@layout/fragment_favorite_recipes" />
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.karlosprojects.foodrecipes.presentation.recipes.recipelist.RecipesFragment"
+        android:label="@string/recipes.recipes_title"
+        tools:layout="@layout/fragment_recipes" >
+        <action
+            android:id="@+id/action_recipesFragment_to_recipesBottomSheet"
+            app:destination="@id/recipesBottomSheet" />
+        <action
+            android:id="@+id/action_recipesFragment_to_recipeDetail"
+            app:destination="@id/recipeDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodJokeFragment"
+        android:name="com.karlosprojects.foodrecipes.presentation.jokes.FoodJokeFragment"
+        android:label="@string/jokes.joke_title"
+        tools:layout="@layout/fragment_food_joke" />
+    <dialog
+        android:id="@+id/recipesBottomSheet"
+        android:name="com.karlosprojects.foodrecipes.presentation.recipes.bottomsheet.RecipesBottomSheet"
+        android:label="recipes_bottom_sheet"
+        tools:layout="@layout/recipes_bottom_sheet" >
+        <action
+            android:id="@+id/action_recipesBottomSheet_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+    </dialog>
+    <activity
+        android:id="@+id/recipeDetail"
+        android:name="com.karlosprojects.foodrecipes.presentation.recipes.recipedetail.RecipeDetail"
+        android:label="@string/recipes_details.details_title"
+        tools:layout="@layout/activity_recipe_detail">
+        <argument
+            android:name="recipe"
+            app:argType="com.karlosprojects.foodrecipes.domain.model.Recipes" />
+    </activity>
+</navigation>
