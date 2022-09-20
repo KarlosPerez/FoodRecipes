@@ -13,7 +13,7 @@ import com.google.android.material.chip.ChipGroup
 import com.karlosprojects.foodrecipes.core.utils.Constants.DEFAULT_DIET_TYPE
 import com.karlosprojects.foodrecipes.core.utils.Constants.DEFAULT_MEAL_TYPE
 import com.karlosprojects.foodrecipes.databinding.RecipesBottomSheetBinding
-import com.karlosprojects.foodrecipes.presentation.recipes.RecipesViewModel
+import com.karlosprojects.foodrecipes.presentation.recipes.recipelist.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

@@ -8,16 +8,19 @@
     <fragment
         android:id="@+id/favoriteRecipesFragment"
         android:name="com.karlosprojects.foodrecipes.presentation.favorites.FavoriteRecipesFragment"
-        android:label="@string/recipes.recipes_title"
+        android:label="@string/favorite.favorite_title"
         tools:layout="@layout/fragment_favorite_recipes" />
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.karlosprojects.foodrecipes.presentation.recipes.RecipesFragment"
-        android:label="@string/favorite.favorite_title"
+        android:name="com.karlosprojects.foodrecipes.presentation.recipes.recipelist.RecipesFragment"
+        android:label="@string/recipes.recipes_title"
         tools:layout="@layout/fragment_recipes" >
         <action
             android:id="@+id/action_recipesFragment_to_recipesBottomSheet"
             app:destination="@id/recipesBottomSheet" />
+        <action
+            android:id="@+id/action_recipesFragment_to_recipeDetail"
+            app:destination="@id/recipeDetail" />
     </fragment>
     <fragment
         android:id="@+id/foodJokeFragment"
@@ -33,4 +36,13 @@
             android:id="@+id/action_recipesBottomSheet_to_recipesFragment"
             app:destination="@id/recipesFragment" />
     </dialog>
+    <activity
+        android:id="@+id/recipeDetail"
+        android:name="com.karlosprojects.foodrecipes.presentation.recipes.recipedetail.RecipeDetail"
+        android:label="@string/recipes_details.details_title"
+        tools:layout="@layout/activity_recipe_detail">
+        <argument
+            android:name="recipe"
+            app:argType="com.karlosprojects.foodrecipes.domain.model.Recipes" />
+    </activity>
 </navigation>

@@ -24,4 +24,7 @@
     <color name="checkedChipTextColor">#FF3700B3</color>
     <color name="chipTextColor">@color/darkGray</color>
 
+    <color name="actionBarBackgroundColor">@color/purple_500</color>
+
+
 </resources>
