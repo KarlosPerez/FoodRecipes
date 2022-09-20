@@ -4,12 +4,12 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.core.text.HtmlCompat
 import androidx.databinding.BindingAdapter
 import androidx.navigation.findNavController
 import coil.load
 import com.google.android.material.textview.MaterialTextView
 import com.karlosprojects.foodrecipes.R
-import com.karlosprojects.foodrecipes.data.dto.RecipeDto
 import com.karlosprojects.foodrecipes.domain.model.Recipes
 import com.karlosprojects.foodrecipes.presentation.recipes.recipelist.RecipesFragmentDirections
 
@@ -45,6 +45,15 @@ class ItemRecipeBinding {
         @JvmStatic
         fun setPreparationTime(textView: MaterialTextView, preparationTime: Int) {
             textView.text = preparationTime.toString()
+        }
+
+        @BindingAdapter("parseHtml")
+        @JvmStatic
+        fun parseHtml(textView: MaterialTextView, text: String) {
+            textView.text = HtmlCompat.fromHtml(
+                text,
+                HtmlCompat.FROM_HTML_MODE_LEGACY
+            )
         }
 
         @BindingAdapter("applyVeganColor")

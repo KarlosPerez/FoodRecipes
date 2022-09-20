@@ -3,6 +3,7 @@ package com.karlosprojects.foodrecipes.core.utils
 object Constants {
 
     const val BASE_URL = "https://api.spoonacular.com"
+    const val BASE_IMAGE_URL = "https://spoonacular.com/cdn/ingredients_100x100/"
     const val API_KEY = "8d4f6726680948c7bbfe7393514653d6"
 
     // API Query Keys

@@ -22,7 +22,7 @@ class PagerAdapter(
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> RecipeOverviewFragment().apply { arguments = bundle }
-            1 -> IngredientsFragment()
+            1 -> IngredientsFragment().apply { arguments = bundle }
             2 -> InstructionsFragment()
             else -> RecipeOverviewFragment()
         }
