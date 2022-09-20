@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.karlosprojects.foodrecipes.databinding.ItemRecipeBinding
 import com.karlosprojects.foodrecipes.domain.model.Recipes
 
-class RecipesAdapter() : ListAdapter<Recipes, RecipesAdapter.RecipesViewHolder>(DiffCallback()) {
+class RecipesAdapter : ListAdapter<Recipes, RecipesAdapter.RecipesViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesViewHolder {
         return RecipesViewHolder.from(parent)
@@ -21,10 +21,6 @@ class RecipesAdapter() : ListAdapter<Recipes, RecipesAdapter.RecipesViewHolder>(
 
     class RecipesViewHolder(private val binding: ItemRecipeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
-        init {
-
-        }
 
         fun bind(recipe: Recipes) {
             binding.recipe = recipe

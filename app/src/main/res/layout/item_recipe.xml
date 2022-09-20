@@ -72,7 +72,7 @@
                     android:layout_marginTop="@dimen/dp_12"
                     android:ellipsize="end"
                     android:maxLines="3"
-                    android:text="@{recipe.summary}"
+                    parseHtml="@{recipe.summary}"
                     android:textColor="@color/darkGray"
                     android:textSize="@dimen/sp_14"
                     app:layout_constraintEnd_toEndOf="@+id/itemRecipeName"
