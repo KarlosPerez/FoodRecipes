@@ -12,6 +12,7 @@
     <string name="recipes.accessibility_preparation_time">Preparation time is %1$s minutes</string>
     <string name="recipes.accessibility_vegan_recipe">This recipe is vegan</string>
     <string name="recipes.accessibility_non_vegan_recipe">This recipe is not vegan</string>
+    <string name="recipes.accessibility_return_to_recipes">Return to recipes</string>
 
     <!-- Bottom Sheet -->
     <string name="meal_type">Meal Type</string>

@@ -46,10 +46,12 @@ class RecipeDetail : AppCompatActivity() {
     }
 
     private fun setToolbar() {
-        setSupportActionBar(binding.toolbar)
-        binding.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        binding.toolbar.setNavigationOnClickListener { finish() }
+        binding.toolbar.apply {
+            setSupportActionBar(this)
+            setTitleTextColor(ContextCompat.getColor(this@RecipeDetail, R.color.white))
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            setNavigationOnClickListener { finish() }
+        }
     }
 
 }
