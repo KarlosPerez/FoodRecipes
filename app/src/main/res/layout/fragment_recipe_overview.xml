@@ -111,6 +111,7 @@
             android:layout_marginStart="@dimen/dp_8"
             android:text="@string/vegetarian"
             android:textColor="@color/darkGray"
+            tools:textColor="@color/green"
             app:layout_constraintBottom_toBottomOf="@+id/vegetarian_imageView"
             app:layout_constraintStart_toEndOf="@+id/vegetarian_imageView"
             app:layout_constraintTop_toTopOf="@+id/vegetarian_imageView" />

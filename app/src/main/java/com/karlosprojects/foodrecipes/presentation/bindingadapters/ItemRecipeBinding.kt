@@ -1,6 +1,7 @@
 package com.karlosprojects.foodrecipes.presentation.bindingadapters
 
 import android.view.View
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -19,10 +20,10 @@ class ItemRecipeBinding {
 
         @BindingAdapter("onRecipeClickListener")
         @JvmStatic
-        fun onRecipeClickListener(recipeLayout: ConstraintLayout, recipe: Recipes) {
-            recipeLayout.setOnClickListener {
+        fun onRecipeClickListener(image: AppCompatImageButton, recipe: Recipes) {
+            image.setOnClickListener {
                 val action = RecipesFragmentDirections.actionRecipesFragmentToRecipeDetail(recipe)
-                recipeLayout.findNavController().navigate(action)
+                image.findNavController().navigate(action)
             }
         }
 
