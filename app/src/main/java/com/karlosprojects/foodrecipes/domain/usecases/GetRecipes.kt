@@ -1,6 +1,7 @@
 package com.karlosprojects.foodrecipes.domain.usecases
 
 import com.karlosprojects.foodrecipes.core.utils.Constants.API_KEY
+import com.karlosprojects.foodrecipes.core.utils.Constants.DEFAULT_RECIPES_NUMBER
 import com.karlosprojects.foodrecipes.core.utils.Constants.QUERY_ADD_RECIPE_INFORMATION
 import com.karlosprojects.foodrecipes.core.utils.Constants.QUERY_API_KEY
 import com.karlosprojects.foodrecipes.core.utils.Constants.QUERY_DIET
@@ -22,7 +23,7 @@ class GetRecipes(
     private fun applyQueries(preferences: DataStoreParameters): HashMap<String, String> {
         val queries: HashMap<String, String> = HashMap()
 
-        queries[QUERY_NUMBER] = "50"
+        queries[QUERY_NUMBER] = DEFAULT_RECIPES_NUMBER
         queries[QUERY_API_KEY] = API_KEY
         queries[QUERY_TYPE] = preferences.mealType
         queries[QUERY_DIET] = preferences.dietType

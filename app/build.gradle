@@ -17,7 +17,7 @@ android {
         versionCode versions.versionCode
         versionName versions.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.karlosprojects.foodrecipes.HiltTestRunner"
     }
 
     buildTypes {
@@ -57,6 +57,7 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$versions.junitAndroidExtVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoCoreVersion"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$versions.espressoCoreVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-accessibility:$versions.espressoCoreVersion"
     androidTestImplementation "com.google.dagger:hilt-android-testing:$versions.hiltVersion"
     testAnnotationProcessor "com.google.dagger:hilt-android-compiler:$versions.hiltVersion"
     kaptAndroidTest "com.google.dagger:hilt-android-compiler:$versions.hiltVersion"
@@ -66,6 +67,10 @@ dependencies {
     kapt "androidx.room:room-compiler:$versions.roomVersion"
     implementation "androidx.room:room-ktx:$versions.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$versions.roomVersion"
+
+    debugImplementation("androidx.fragment:fragment-testing:$versions.fragmentTesting") {
+        exclude group: 'androidx.test', module: 'core'
+    }
 
     // Data binding
     kapt "androidx.databinding:databinding-common:7.2.2"
