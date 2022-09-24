@@ -14,9 +14,9 @@
     <color name="darkGray">#4B4B4B</color>
     <color name="dark">#313C44</color>
     <color name="darker">#151B20</color>
-    <color name="red">#FF4646</color>
-    <color name="yellow">#FFC114</color>
-    <color name="green">#00C980</color>
+    <color name="red">#EB0000</color>
+    <color name="yellow">#8F6900</color>
+    <color name="green">#008051</color>
 
     // Custom Chip Style
     <color name="checkedChipBackgroundColor">#306200EE</color>
