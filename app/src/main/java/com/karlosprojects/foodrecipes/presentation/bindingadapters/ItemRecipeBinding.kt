@@ -3,7 +3,6 @@ package com.karlosprojects.foodrecipes.presentation.bindingadapters
 import android.view.View
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.appcompat.widget.AppCompatImageView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.text.HtmlCompat
 import androidx.databinding.BindingAdapter
@@ -36,16 +35,30 @@ class ItemRecipeBinding {
             }
         }
 
+        @BindingAdapter("setAccessibilityDescription")
+        @JvmStatic
+        fun setAccessibilityDescription(imageView: AppCompatImageView, description: String) {
+            imageView.contentDescription = description
+        }
+
         @BindingAdapter("setNumbersOfLikes")
         @JvmStatic
         fun setNumbersOfLikes(textView: MaterialTextView, likes: Int) {
             textView.text = likes.toString()
+            textView.contentDescription = textView.context.getString(
+                R.string.recipes_accessibility_number_of_likes,
+                likes.toString()
+            )
         }
 
         @BindingAdapter("setPreparationTime")
         @JvmStatic
         fun setPreparationTime(textView: MaterialTextView, preparationTime: Int) {
             textView.text = preparationTime.toString()
+            textView.contentDescription = textView.context.getString(
+                R.string.recipes_accessibility_preparation_time,
+                preparationTime.toString()
+            )
         }
 
         @BindingAdapter("parseHtml")
@@ -64,11 +77,16 @@ class ItemRecipeBinding {
                 when (view) {
                     is MaterialTextView -> {
                         view.setTextColor(ContextCompat.getColor(view.context, R.color.green))
+                        view.contentDescription =
+                            view.context.getString(R.string.recipes_accessibility_vegan_recipe)
                     }
                     is AppCompatImageView -> {
                         view.setColorFilter(ContextCompat.getColor(view.context, R.color.green))
                     }
                 }
+            } else {
+                view.contentDescription =
+                    view.context.getString(R.string.recipes_accessibility_non_vegan_recipe)
             }
         }
     }

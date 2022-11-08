@@ -259,7 +259,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnApply"
             android:layout_width="@dimen/dp_0"
-            android:layout_height="@dimen/dp_60"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_16"
             android:backgroundTint="@color/purple_500"
             android:text="@string/apply"

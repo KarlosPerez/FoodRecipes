@@ -8,6 +8,13 @@
     <string name="recipes.meal_type">Meal Type</string>
     <string name="recipes.diet_type">Diet Type</string>
     <string name="recipes.search_title">Search</string>
+    <string name="recipes.accessibility_go_to_details">Go to recipe %1$s</string>
+    <string name="recipes.accessibility_filter_recipes">Filter recipes</string>
+    <string name="recipes.accessibility_number_of_likes">This recipe has %1$s likes</string>
+    <string name="recipes.accessibility_preparation_time">Preparation time is %1$s minutes</string>
+    <string name="recipes.accessibility_vegan_recipe">This recipe is vegan</string>
+    <string name="recipes.accessibility_non_vegan_recipe">This recipe is not vegan</string>
+    <string name="recipes.accessibility_return_to_recipes">Return to recipes</string>
 
     <!-- Bottom Sheet -->
     <string name="meal_type">Meal Type</string>
