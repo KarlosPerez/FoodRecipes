@@ -22,4 +22,14 @@ class RecipeTypeConverter {
         return gson.toJson(recipe)
     }
 
+    @TypeConverter
+    fun favoriteToString(recipe: Recipes): String {
+        return gson.toJson(recipe)
+    }
+
+    @TypeConverter
+    fun stringToFavorite(data: String): Recipes {
+        val listType = object : TypeToken<Recipes>() {}.type
+        return gson.fromJson(data, listType)
+    }
 }
