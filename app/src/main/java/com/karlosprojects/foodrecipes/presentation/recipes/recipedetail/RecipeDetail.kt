@@ -3,8 +3,6 @@ package com.karlosprojects.foodrecipes.presentation.recipes.recipedetail
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.databinding.DataBindingUtil
-import androidx.navigation.fragment.navArgs
 import androidx.navigation.navArgs
 import com.google.android.material.tabs.TabLayoutMediator
 import com.karlosprojects.foodrecipes.R
@@ -27,7 +25,8 @@ class RecipeDetail : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_recipe_detail)
+        binding = ActivityRecipeDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setToolbar()
         setupPager()
