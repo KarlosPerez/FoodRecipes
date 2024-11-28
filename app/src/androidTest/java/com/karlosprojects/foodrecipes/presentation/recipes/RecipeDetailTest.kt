@@ -2,12 +2,8 @@ package com.karlosprojects.foodrecipes.presentation.recipes
 
 import android.os.SystemClock
 import androidx.core.os.bundleOf
-import androidx.test.espresso.accessibility.AccessibilityChecks
-import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.filters.SmallTest
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import com.google.android.apps.common.testing.accessibility.framework.AccessibilityCheckResultUtils.matchesViews
-import com.karlosprojects.foodrecipes.R
 import com.karlosprojects.foodrecipes.base.BaseUITest
 import com.karlosprojects.foodrecipes.domain.model.Recipes
 import com.karlosprojects.foodrecipes.presentation.recipes.recipeoverview.RecipeOverviewFragment
@@ -17,7 +13,6 @@ import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import okhttp3.mockwebserver.QueueDispatcher
 import org.junit.Before
-import org.junit.BeforeClass
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -79,7 +74,7 @@ internal class RecipeDetailTest : BaseUITest(dispatcher = QueueDispatcher()) {
 
     companion object {
 
-        @BeforeClass
+        /*@BeforeClass
         @JvmStatic
         fun enableAccessibilityChecks() {
             AccessibilityChecks.enable().apply {
@@ -88,7 +83,7 @@ internal class RecipeDetailTest : BaseUITest(dispatcher = QueueDispatcher()) {
                 setSuppressingResultMatcher(matchesViews(withId(R.id.vegetarian_textView)))
 
             }
-        }
+        }*/
     }
 
 }

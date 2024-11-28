@@ -3,13 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="recipe"
-            type="com.karlosprojects.foodrecipes.domain.model.Recipes" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/recipeItem"
         android:layout_width="match_parent"
@@ -36,7 +29,6 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/itemRecipeImg"
-                    loadImageFromUrl="@{recipe.image}"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_0"
                     android:scaleType="centerCrop"
@@ -54,7 +46,6 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/courgette"
                     android:maxLines="2"
-                    android:text="@{recipe.title}"
                     android:textColor="@color/darker"
                     android:textSize="@dimen/sp_20"
                     android:textStyle="bold"
@@ -66,7 +57,6 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/itemRecipeDescription"
-                    parseHtml="@{recipe.summary}"
                     android:layout_width="@dimen/dp_0"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_12"
@@ -94,7 +84,6 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/itemRecipeLikesTitle"
-                    setNumbersOfLikes="@{recipe.aggregateLikes}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
@@ -116,7 +105,6 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/itemRecipePreparationTimeTitle"
-                    setPreparationTime="@{recipe.readyInMinutes}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dp_24"
@@ -129,7 +117,6 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/itemRecipeImgVegan"
-                    applyVeganColor="@{recipe.vegan}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_vegan"
@@ -140,7 +127,6 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/itemRecipeVeganTitle"
-                    applyVeganColor="@{recipe.vegan}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/dp_24"
@@ -155,7 +141,6 @@
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/itemRecipeImgDetails"
-                    onRecipeClickListener="@{recipe}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_12"

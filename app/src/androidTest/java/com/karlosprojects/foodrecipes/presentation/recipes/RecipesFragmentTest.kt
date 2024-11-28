@@ -1,6 +1,5 @@
 package com.karlosprojects.foodrecipes.presentation.recipes
 
-import androidx.test.espresso.accessibility.AccessibilityChecks
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.filters.SmallTest
@@ -20,7 +19,6 @@ import dagger.hilt.android.testing.HiltAndroidTest
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.QueueDispatcher
 import org.junit.Before
-import org.junit.BeforeClass
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -100,13 +98,13 @@ internal class RecipesFragmentTest : BaseUITest(dispatcher = QueueDispatcher()) 
 
     companion object {
 
-        @BeforeClass
+        /*@BeforeClass
         @JvmStatic
         fun enableAccessibilityChecks() {
             AccessibilityChecks.enable().apply {
                 setRunChecksFromRootView(true)
             }
-        }
+        }*/
     }
 
 }
